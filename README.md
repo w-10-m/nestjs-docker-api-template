@@ -3,8 +3,8 @@
 Template using Nestjs and Docker for future project
 
 ### Requirements 
-Docker
-Node >=20
+- Docker
+- Node >=20
 
 
 ### Features
