@@ -1,4 +1,8 @@
+# IDE files
 .idea/
+
+# Docker
+/pgdata
 
 # Logs
 logs
