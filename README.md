@@ -8,10 +8,10 @@ Node >=20
 
 
 ### Features
-Docker development with integrated Postgres DB
-NestJS / Typescript
-Commit Safety
-Testing Requirements > 80%
-CICD with Github Actions
-AWS deployment
+- Docker development with integrated Postgres DB
+- NestJS / Typescript
+- Commit Safety
+- Testing Requirements > 80%
+- CICD with Github Actions
+- AWS deployment
 
