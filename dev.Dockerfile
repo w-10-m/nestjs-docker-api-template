@@ -13,11 +13,17 @@ RUN npm install
 # Step 5: Bundle app source inside Docker image
 COPY . .
 
-# Step 6: Build your app
+# Assuming db/dist has been copied to a directory within the Docker context
+# Adjust the COPY command to match the actual location within your project structure
+COPY ./temp/db/dist/ /app/node_modules/db/
+
+# Step 7: Build your app
 RUN npm run build
 
-# Step 7: Define the network ports that this container will listen on at runtime
+
+
+# Step 8: Define the network ports that this container will listen on at runtime
 EXPOSE 3000
 
-# Step 8: Define the command to run your app
+# Step 9: Define the command to run your app
 CMD ["npm", "run", "start:dev"]

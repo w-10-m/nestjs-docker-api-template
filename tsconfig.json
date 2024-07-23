@@ -3,6 +3,10 @@
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules/db/entities.module.d.ts"],
+    "paths": {
+      "*": ["node_modules/*", "src/types/*", "./node_modules/db/entities.module.d.ts"]
+    },
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,

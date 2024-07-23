@@ -3,6 +3,8 @@
 
 # Docker
 /pgdata
+temp
+
 
 # Logs
 logs
