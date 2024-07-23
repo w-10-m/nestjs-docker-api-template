@@ -2,11 +2,6 @@
 
 Template using Nestjs and Docker for future project
 
-### Requirements
-- Docker
-- Node >=20
-
-
 ### Features
 - Docker development with integrated Postgres DB
 - NestJS / Typescript
@@ -14,6 +9,14 @@ Template using Nestjs and Docker for future project
 - Testing Requirements > 80%
 - CICD with Github Actions
 - AWS deployment
+
+
+### Docker
+- `docker compose up` to start the app
+- `docker compose up --build` to rebuild the app (if you have updated packages or need a new image)
+- `docker compose down` to stop the app
+
+
 
 
 <p align="center">

@@ -3,7 +3,7 @@ services:
     image: postgres
     restart: always
     environment:
-      - POSTGRES_PASSWORD=postgres
+      - DB_PASSWORD=${DB_PASSWORD}
     container_name: postgres
     volumes:
       - ./pgdata:/var/lib/postgresql/data
