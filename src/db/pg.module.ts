@@ -1,14 +1,17 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import { EntitiesModule }  from 'db';
 import { ConfigurationService } from '../config/config.service';
+import { PgController } from './pg.controller';
+import { EntitiesModule } from '@west10media/db';
+import { PgService } from './pg.service';
 
 @Module({
   imports: [
     ConfigModule,
+    EntitiesModule,
     TypeOrmModule.forRootAsync({
-      imports: [ConfigModule, EntitiesModule],
+      imports: [ConfigModule],
       useFactory: async (configService: ConfigurationService) => ({
         type: 'postgres',
         host: configService.getDatabaseHost(),
@@ -16,7 +19,6 @@ import { ConfigurationService } from '../config/config.service';
         username: configService.getDatabaseUsername(),
         password: configService.getDatabasePassword(),
         database: configService.getDatabaseName(),
-        // entities: [__dirname + '/../**/*.entity{.ts,.js}'],
         synchronize: true,
         entities:[],
         autoLoadEntities: true,
@@ -24,7 +26,8 @@ import { ConfigurationService } from '../config/config.service';
       inject: [ConfigurationService],
     }),
   ],
-  providers: [ConfigurationService],
+  controllers: [PgController],
+  providers: [ConfigurationService, PgService],
   exports: [TypeOrmModule, ConfigurationService],
 })
 export class PgModule {}
