@@ -13,10 +13,6 @@ RUN npm install
 # Step 5: Bundle app source inside Docker image
 COPY . .
 
-# Assuming db/dist has been copied to a directory within the Docker context
-# Adjust the COPY command to match the actual location within your project structure
-# COPY ./temp/db/dist/ /app/node_modules/db/
-
 # Step 7: Build your app
 RUN npm run build
 
